@@ -1,7 +1,7 @@
 //Write files asynchronously in node js
 const fs = require("fs").promises
 const path = require("path")
-const writeFileContent = async (userPath, content) => {
+const writeToFile = async (userPath, content) => {
 	try {
 		let filename = path.basename(userPath)
 		if (!filename)
@@ -23,8 +23,8 @@ const testcase2 =
 // Calling the function with three different file paths
 const output = async () => {
 	console.log("Test Case 1: ")
-	await writeFileContent(testcase1, "Sample Content")
+	await writeToFile(testcase1, "Sample Content")
 	console.log("Test Case 2: ")
-	await writeFileContent(testcase2, "Content in non existent folder")
+	await writeToFile(testcase2, "Content in non existent folder")
 }
 output()
