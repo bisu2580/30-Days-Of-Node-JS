@@ -1,0 +1,44 @@
+*/package-lock.json
+*/package.json
+# Ignore node_modules directory
+*/node_modules/
+# Ignore any built files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Ignore log files and other runtime generated files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore dependency directories
+.bundledDependencies
+bundle/
+
+# Ignore cache files
+.npm
+.npmrc
+.lock-wscript
+.lock-staging
+.pnp
+.pnp.js
+
+# Ignore environment variables file
+.env
+
+# Ignore IDE and editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
