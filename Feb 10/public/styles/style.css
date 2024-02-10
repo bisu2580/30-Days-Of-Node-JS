@@ -1,0 +1,10 @@
+* {
+	margin: 0;
+	padding: 10px;
+}
+body img {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 400px;
+}
