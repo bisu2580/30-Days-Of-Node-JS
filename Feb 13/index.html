@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ws = new WebSocket("ws://localhost:3000")
+        ws.onopen = () => {
+            console.log("Connected to Websocket server")
+            ws.send("Hey Server I am Biswajit")
+        }
+        ws.onmessage = (event) => {
+            console.log("Received Message: " + event.data)
+        }
+        ws.onclose = () => {
+            console.log("Disconnected from WebSocket server")
+        }
+    </script>
+    <h1>Hi Everyone</h1>
+</body>
+
+</html>
