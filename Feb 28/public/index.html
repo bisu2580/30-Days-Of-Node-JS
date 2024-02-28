@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Collaboration</title>
+</head>
+
+<body>
+    <textarea id="editor" rows="10" cols="50"></textarea>
+    <button type="button" id="btn">Update Document</button>
+    <script>const socket = new WebSocket("ws://localhost:3000/socket")
+
+        socket.addEventListener("open", function (event) {
+            console.log("WebSocket connection established")
+        })
+
+        socket.addEventListener("message", function (event) {
+            document.getElementById("editor").value = event.data
+            console.log("Message received:", event.data)
+        })
+
+        document.getElementById("editor").addEventListener("input", (event) => {
+            const text = event.target.value
+            socket.send(text)
+        })
+
+        document.getElementById("btn").addEventListener("click", () => {
+            const text = document.getElementById("editor").value
+            socket.send("updated " + text)
+        })
+    </script>
+</body>
+
+</html>
